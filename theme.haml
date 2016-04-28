@@ -1,0 +1,37 @@
+%html
+  %head
+    %title {Title}
+    %link{rel: "stylesheet", href: "https://kaminski.io/assets/screen.css"}
+  %body.twocol
+    %header#tumblrheader
+      %h1
+        %a{href: "{BlogURL}"} {Title}
+      %h5 {Description} -  
+        %a{href: "{RSS}"} RSS Feed
+    %hr
+    .flex-container 
+      {block:Posts}
+      {block:Text}
+      .halfwidth
+        .border
+          %article.text
+            %header
+              %h2 
+                {block:IndexPage}
+                %a{href: "{Permalink}"} {Title}
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                {Title}
+                {/block:PermalinkPage}
+            .content {Body}
+            %footer
+              %p Posted at {12Hour}:{Minutes}{AmPm} {Month} {DayOfMonth}, {Year}
+          {/block:Text}
+          {block:Photo}
+          %article.photo
+            %figure{aria-labelledby: "photo{PostID}"}
+              %img{src: "{PhotoURL-HighRes}", alt: "{PhotoAlt}"}
+              %figcaption{id: "photo{PostID}"} {Caption}
+      {/block:Photo}
+      {/block:Posts}
+      %script{src: "https://kaminski.io/assets/modernizr.js"}
