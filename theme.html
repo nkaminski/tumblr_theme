@@ -44,20 +44,21 @@
         <figcaption id='photo{PostID}'>{Caption}</figcaption>
       </figure>
     </article>
+    <footer>
+      <p>Posted at {12Hour}:{Minutes}{AmPm} {Month} {DayOfMonth}, {Year}</p>
+    </footer>
     <hr>
     {/block:Photo}
     {block:Link}
     <article class='link'>
-      <header>
-        <h2>
-          {Name}
-        </h2>
-      </header>
+      <header></header>
       <div class='content'>
         {block:Host}
-        <a href='{Target}'>
-          {Host}
-        </a>
+        <h2>
+          <a target='{Target}' href='{URL}'>
+            {Host}
+          </a>
+        </h2>
         {/block:Host}
         {block:Description}
         <h5>{Description}</h5>

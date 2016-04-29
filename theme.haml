@@ -34,6 +34,8 @@
       %figure{aria-labelledby: "photo{PostID}"}
         %img{src: "{PhotoURL-HighRes}", alt: "{PhotoAlt}"}
         %figcaption{id: "photo{PostID}"} {Caption}
+    %footer
+      %p Posted at {12Hour}:{Minutes}{AmPm} {Month} {DayOfMonth}, {Year}
     %hr
     {/block:Photo}
     {block:Link}
@@ -41,8 +43,9 @@
       %header
       .content
         {block:Host}
-        %a{href:"{Target}"}
-          {Host}
+        %h2
+          %a{target:"{Target}", href:"{URL}"}
+            {Host}
         {/block:Host}
         {block:Description}
         %h5 {Description}
