@@ -18,15 +18,12 @@
     %article.text
       %header
         %h2 
-          {block:IndexPage}
-          %a{href: "{Permalink}"} {Title}
-          {/block:IndexPage}
-          {block:PermalinkPage}
           {Title}
-          {/block:PermalinkPage}
       .content {Body}
       %footer
-        %p Posted at {12Hour}:{Minutes}{AmPm} {Month} {DayOfMonth}, {Year}
+        %p 
+          Posted at {12Hour}:{Minutes}{AmPm} {Month} {DayOfMonth}, {Year} - 
+          %a{href: "{Permalink}"}Permalink 
     %hr
     {/block:Text}
     {block:Photo}
@@ -35,7 +32,9 @@
         %img{src: "{PhotoURL-HighRes}", alt: "{PhotoAlt}"}
         %figcaption{id: "photo{PostID}"} {Caption}
     %footer
-      %p Posted at {12Hour}:{Minutes}{AmPm} {Month} {DayOfMonth}, {Year}
+      %p 
+        Posted at {12Hour}:{Minutes}{AmPm} {Month} {DayOfMonth}, {Year} -
+        %a{href: "{Permalink}"}Permalink 
     %hr
     {/block:Photo}
     {block:Link}
@@ -51,7 +50,9 @@
         %h5 {Description}
         {/block:Description}
       %footer
-        %p Posted at {12Hour}:{Minutes}{AmPm} {Month} {DayOfMonth}, {Year}
+        %p 
+          Posted at {12Hour}:{Minutes}{AmPm} {Month} {DayOfMonth}, {Year} - 
+          %a{href: "{Permalink}"}Permalink 
     %hr
     {/block:Link}
     {/block:Posts}
