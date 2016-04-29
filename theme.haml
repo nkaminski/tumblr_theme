@@ -4,12 +4,12 @@
     %meta{charset: "utf-8"}
     %meta{name: "viewport", content: "width=device-width,initial-scale=1.0,shrink-to-fit=no"}
     %link{rel: "stylesheet", href: "https://kaminski.io/assets/screen.css"}
-  %body.twocol
+  %body
     %header#tumblrheader
       %h1
         %a{href: "{BlogURL}"} {Title}
-      %h5 {Description} 
       %nav
+        %h5 {Description} 
         %a{href: "https://kaminski.io"} My Website
         %a{href: "{RSS}"} RSS Feed
     %hr
@@ -36,5 +36,20 @@
         %figcaption{id: "photo{PostID}"} {Caption}
     %hr
     {/block:Photo}
+    {block:Link}
+    %article.link
+      %header
+      .content
+        {block:Host}
+        %a{href:"{Target}"}
+          {Host}
+        {/block:Host}
+        {block:Description}
+        %h5 {Description}
+        {/block:Description}
+      %footer
+        %p Posted at {12Hour}:{Minutes}{AmPm} {Month} {DayOfMonth}, {Year}
+    %hr
+    {/block:Link}
     {/block:Posts}
     %script{src: "https://kaminski.io/assets/modernizr.js"}
